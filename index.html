@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Market — Витрина & Mini App</title>
+    <style>
+        body {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            background-color: #120136;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(180deg, #ffcc00, #ff9900);
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        header h1 {
+            margin: 0;
+            color: #fff;
+            text-shadow: 3px 3px 0px #000;
+            font-size: 26px;
+        }
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 1px 1px 0px #000;
+        }
+        .section-title {
+            font-size: 20px;
+            color: #ff0055;
+            text-shadow: 2px 2px 0px #000;
+            margin: 25px 0 10px 0;
+            text-transform: uppercase;
+        }
+        .container {
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .card {
+            background-color: #200f49;
+            border: 4px solid #3d1b8c;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 290px;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 {
+            margin: 5px 0;
+            color: #00ffcc;
+            text-shadow: 2px 2px 0px #000;
+            font-size: 18px;
+        }
+        .card p {
+            font-size: 13px;
+            color: #bbb;
+            margin: 5px 0 10px 0;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+        .price {
+            font-size: 22px;
+            color: #ffcc00;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 0px #000;
+        }
+        .btn {
+            background: linear-gradient(180deg, #28a745, #1e7e34);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-shadow: 1px 1px 0px #000;
+            box-shadow: 0 4px 0px #155724;
+        }
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BRAWL MARKET</h1>
+        <p>Официальная витрина нашего Telegram Mini App</p>
+    </header>
+
+    <!-- КАТЕГОРИЯ 1: ПРОДАЖА АККАУНТОВ -->
+    <div class="section-title">🎮 Продажа аккаунтов</div>
+    <div class="container">
+        <div class="card">
+            <h3>Фулл доступ (25k кубков)</h3>
+            <p>3 легендарки (Леон, Ворон, Спайк). Отличный старт для active-игры.</p>
+            <div class="price">590 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+        <div class="card">
+            <h3>Аккаунт со скинами</h3>
+            <p>15k кубков + эксклюзивные скины прошлых сезонов. Почта чистая.</p>
+            <div class="price">320 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+    </div>
+
+    <!-- КАТЕГОРИЯ 2: БУСТ КУБКОВ -->
+    <div class="section-title">⚡ Буст кубков</div>
+    <div class="container">
+        <div class="card">
+            <h3>+1000 Кубков</h3>
+            <p>Быстрый ап кубков профессиональными игроками. Безопасно, без бана.</p>
+            <div class="price">200 ₽</div>
+            <a href="https://t.me" class="btn">Заказать в TG</a>
+        </div>
+        <div class="card">
+            <h3>Ап на 25 ранг</h3>
+            <p>Прокачаем любого вашего бравлера на 25 ранг за 1-2 дня.</p>
+            <div class="price">150 ₽</div>
+            <a href="https://t.me" class="btn">Заказать в TG</a>
+        </div>
+    </div>
+
+    <!-- КАТЕГОРИЯ 3: РЕКЛАМА -->
+    <div class="section-title">📢 Реклама</div>
+    <div class="container">
+        <div class="card">
+            <h3>Пост + Закреп (24ч)</h3>
+            <p>Ваш пост в основном канале. Идеально для продвижения кланов или продажи аккаунтов.</p>
+            <div class="price">150 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+        <div class="card">
+            <h3>Нативный обзор</h3>
+            <p>Индивидуальный обзор вашего проекта/канала от админа с рекомендацией.</p>
+            <div class="price">350 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+    </div>
+
+</body>
+</html>
