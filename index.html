@@ -100,6 +100,45 @@
             transform: translateY(4px);
             box-shadow: none;
         }
+        .market-nav {
+    display: flex;
+    gap: 20px;
+    padding: 15px 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: #ffffff;
+    scrollbar-width: none;
+}
+.market-nav::-webkit-scrollbar {
+    display: none;
+}
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 75px;
+}
+.nav-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 6px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.nav-item:hover .nav-icon {
+    background-color: #e4e6eb;
+    transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -108,6 +147,28 @@
         <h1>BRAWL MARKET</h1>
         <p>Официальная витрина нашего Telegram Mini App</p>
     </header>
+    <nav class="market-nav">
+    <a href="#accounts" class="nav-item">
+        <div class="nav-icon">👤</div>
+        <span>Аккаунты</span>
+    </a>
+    <a href="#push" class="nav-item">
+        <div class="nav-icon">🚀</div>
+        <span>Пуш кубков</span>
+    </a>
+    <a href="#donate" class="nav-item">
+        <div class="nav-icon">💎</div>
+        <span>Донат</span>
+    </a>
+    <a href="#design" class="nav-item">
+        <div class="nav-icon">🎨</div>
+        <span>Дизайн</span>
+    </a>
+    <a href="#ads" class="nav-item">
+        <div class="nav-icon">📢</div>
+        <span>Биржа рекламы</span>
+    </a>
+</nav>
 
     <!-- КАТЕГОРИЯ 1: ПРОДАЖА АККАУНТОВ -->
     <div class="section-title">🎮 Продажа аккаунтов</div>
