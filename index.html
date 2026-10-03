@@ -1,225 +1,245 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="https://googleapis.com/css2?family=Inter:wght@400;600;800">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Market — Витрина & Mini App</title>
+    <link rel="stylesheet" href="https://googleapis.com">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brawl Market — Витрина & Mini App</title>
-    <style>
-        
-        body {
-            font-family:Inter, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background: #ffffff;
-            padding: 20px;
-            
-        }
-        header h1 {
-            margin: 0;
-            color: #0077ff;
-            
-            font-size: 26px;
-            text-align: left;
-            padding-left: 20px
-        }
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            color: #000000;
-            text-align: left;
-            padding-left: 20px
-        
-        }
-        .section-title {
-            font-size: 20px;
-            color: #ff0055;
-            text-shadow: 2px 2px 0px #000;
-            margin: 25px 0 10px 0;
-            text-transform: uppercase;
-        }
-        .container {
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .card {
-            background-color: #200f49;
-            border: 4px solid #3d1b8c;
-            border-radius: 15px;
-            width: 100%;
-            max-width: 290px;
-            padding: 15px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card h3 {
-            margin: 5px 0;
-            color: #00ffcc;
-            text-shadow: 2px 2px 0px #000;
-            font-size: 18px;
-        }
-        .card p {
-            font-size: 13px;
-            color: #bbb;
-            margin: 5px 0 10px 0;
-            font-family: Arial, sans-serif;
-            font-weight: normal;
-        }
-        .price {
-            font-size: 22px;
-            color: #ffcc00;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 0px #000;
-        }
-        .btn {
-            background: linear-gradient(180deg, #28a745, #1e7e34);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            text-shadow: 1px 1px 0px #000;
-            box-shadow: 0 4px 0px #155724;
-        }
-        .btn:active {
-            transform: translateY(4px);
-            box-shadow: none;
-        }
-        .market-nav {
-    display: flex;
-    gap: 20px;
-    padding: 15px 20px;
-    overflow-x: auto;
-    white-space: nowrap;
-    background-color: #ffffff;
-    scrollbar-width: none;
-}
-.market-nav::-webkit-scrollbar {
-    display: none;
-}
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #000000;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    min-width: 75px;
-}
-.nav-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background-color: #f0f2f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    margin-bottom: 6px;
-    transition: background-color 0.2s, transform 0.1s;
-}
-.nav-item:hover .nav-icon {
-    background-color: #e4e6eb;
-    transform: scale(1.05);
-}
-    </style>
+        header {
+            background: #ffffff;
+            padding: 20px 0 10px 0;
+            text-align: left;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #0077ff;
+            font-size: 26px;
+            text-align: left;
+            padding-left: 20px;
+            font-weight: 800;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #666666;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .market-nav {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: flex-start !important;
+            gap: 22px !important;
+            padding: 15px 20px !important;
+            overflow-x: auto !important;
+            white-space: nowrap !important;
+            background-color: #ffffff !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            scrollbar-width: none;
+        }
+
+        .market-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #1f2937; /* Фирменный цвет текста Playrok (темно-серый) */
+            font-size: 14px; /* Размер увеличен на чуть-чуть */
+            font-weight: 600;
+            cursor: pointer;
+            min-width: 85px; /* Увеличено под крупный шрифт */
+            transition: color 0.2s;
+        }
+
+        .nav-item:hover {
+            color: #000000; /* При наведении становится чисто черным, как на Playrok */
+        }
+
+        .nav-icon {
+            width: 58px; /* Кружки стали чуть больше (было 52px) */
+            height: 58px;
+            border-radius: 50%;
+            background-color: #f3f4f6; /* Фирменный светлый фон кружков Playrok */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px; /* Сами иконки стали крупнее */
+            margin-bottom: 8px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .nav-item:hover .nav-icon {
+            background-color: #e5e7eb;
+            transform: scale(1.05);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .section-title {
+            width: 100%;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #120136, #400082);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            width: 280px;
+            padding: 20px;
+            color: #fff;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #ccc;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            background-color: #00cc66;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 0px #00994d;
+            transition: 0.1s;
+        }
+
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>BRAWL MARKET</h1>
-        <p>Официальная витрина нашего Telegram Mini App</p>
-    </header>
-    <nav class="market-nav">
-    <a href="#accounts" class="nav-item">
-        <div class="nav-icon">👤</div>
-        <span>Аккаунты</span>
-    </a>
-    <a href="#push" class="nav-item">
-        <div class="nav-icon">🚀</div>
-        <span>Пуш кубков</span>
-    </a>
-    <a href="#donate" class="nav-item">
-        <div class="nav-icon">💎</div>
-        <span>Донат</span>
-    </a>
-    <a href="#design" class="nav-item">
-        <div class="nav-icon">🎨</div>
-        <span>Дизайн</span>
-    </a>
-    <a href="#ads" class="nav-item">
-        <div class="nav-icon">📢</div>
-        <span>Биржа рекламы</span>
-    </a>
-</nav>
+    <header>
+        <h1>BRAWL MARKET</h1>
+        <p>Официальная витрина нашего Telegram Mini App</p>
+    </header>
 
-    <!-- КАТЕГОРИЯ 1: ПРОДАЖА АККАУНТОВ -->
-    <div class="section-title">🎮 Продажа аккаунтов</div>
-    <div class="container">
-        <div class="card">
-            <h3>Фулл доступ (25k кубков)</h3>
-            <p>3 легендарки (Леон, Ворон, Спайк). Отличный старт для active-игры.</p>
-            <div class="price">590 ₽</div>
-            <a href="https://t.me" class="btn">Купить в TG</a>
-        </div>
-        <div class="card">
-            <h3>Аккаунт со скинами</h3>
-            <p>15k кубков + эксклюзивные скины прошлых сезонов. Почта чистая.</p>
-            <div class="price">320 ₽</div>
-            <a href="https://t.me" class="btn">Купить в TG</a>
-        </div>
-    </div>
+    <nav class="market-nav">
+        <a href="#accounts" class="nav-item">
+            <div class="nav-icon">👤</div>
+            <span>Аккаунты</span>
+        </a>
+        <a href="#push" class="nav-item">
+            <div class="nav-icon">🚀</div>
+            <span>Пуш кубков</span>
+        </a>
+        <a href="#donate" class="nav-item">
+            <div class="nav-icon">💎</div>
+            <span>Донат</span>
+        </a>
+        <a href="#design" class="nav-item">
+            <div class="nav-icon">🎨</div>
+            <span>Дизайн</span>
+        </a>
+        <a href="#ads" class="nav-item">
+            <div class="nav-icon">📢</div>
+            <span>Биржа рекламы</span>
+        </a>
+    </nav>
 
-    <!-- КАТЕГОРИЯ 2: БУСТ КУБКОВ -->
-    <div class="section-title">⚡ Буст кубков</div>
-    <div class="container">
-        <div class="card">
-            <h3>+1000 Кубков</h3>
-            <p>Быстрый ап кубков профессиональными игроками. Безопасно, без бана.</p>
-            <div class="price">200 ₽</div>
-            <a href="https://t.me" class="btn">Заказать в TG</a>
-        </div>
-        <div class="card">
-            <h3>Ап на 25 ранг</h3>
-            <p>Прокачаем любого вашего бравлера на 25 ранг за 1-2 дня.</p>
-            <div class="price">150 ₽</div>
-            <a href="https://t.me" class="btn">Заказать в TG</a>
-        </div>
-    </div>
+    <!-- КАТЕГОРИЯ 1: ПРОДАЖА АККАУНТОВ -->
+    <div class="section-title" id="accounts">👤 Продажа аккаунтов</div>
+    <div class="container">
+        <div class="card">
+            <h3>Фулл доступ (25k кубков)</h3>
+            <p>3 легендарки (Леон, Ворон, Спайк). Отличный старт для active-игры.</p>
+            <div class="price">590 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+        <div class="card">
+            <h3>Аккаунт со скинами</h3>
+            <p>15k кубков + эксклюзивные скины прошлых сезонов. Почта чистая.</p>
+            <div class="price">320 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+    </div>
 
-    <!-- КАТЕГОРИЯ 3: РЕКЛАМА -->
-    <div class="section-title">📢 Реклама</div>
-    <div class="container">
-        <div class="card">
-            <h3>Пост + Закреп (24ч)</h3>
-            <p>Ваш пост в основном канале. Идеально для продвижения кланов или продажи аккаунтов.</p>
-            <div class="price">150 ₽</div>
-            <a href="https://t.me" class="btn">Купить в TG</a>
-        </div>
-        <div class="card">
-            <h3>Нативный обзор</h3>
-            <p>Индивидуальный обзор вашего проекта/канала от админа с рекомендацией.</p>
-            <div class="price">350 ₽</div>
-            <a href="https://t.me" class="btn">Купить в TG</a>
-        </div>
-    </div>
+    <!-- КАТЕГОРИЯ 2: БУСТ КУБКОВ -->
+    <div class="section-title" id="push">🚀 Пуш кубков</div>
+    <div class="container">
+        <div class="card">
+            <h3>+1000 Кубков</h3>
+            <p>Быстрый ап кубков профессиональными игроками. Безопасно, без бана.</p>
+            <div class="price">200 ₽</div>
+            <a href="https://t.me" class="btn">Заказать в TG</a>
+        </div>
+        <div class="card">
+            <h3>Ап на 25 ранг</h3>
+            <p>Прокачаем любого вашего бравлера на 25 ранг за 1-2 дня.</p>
+            <div class="price">150 ₽</div>
+            <a href="https://t.me" class="btn">Заказать в TG</a>
+        </div>
+    </div>
+
+    <!-- КАТЕГОРИЯ 3: РЕКЛАМА -->
+    <div class="section-title" id="ads">📢 Биржа рекламы</div>
+    <div class="container">
+        <div class="card">
+            <h3>Пост + Закреп (24ч)</h3>
+            <p>Ваш пост в основном канале. Идеально для продвижения кланов или продажи аккаунтов.</p>
+            <div class="price">150 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+        <div class="card">
+            <h3>Нативный обзор</h3>
+            <p>Индивидуальный обзор вашего проекта/канала от админа с рекомендацией.</p>
+            <div class="price">350 ₽</div>
+            <a href="https://t.me" class="btn">Купить в TG</a>
+        </div>
+    </div>
 
 </body>
 </html>
