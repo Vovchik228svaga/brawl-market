@@ -3,253 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brawl Market — Витрина & Mini App</title>
+    <title>Brawl Market</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background: #ffffff;
-            padding: 20px 0 10px 0;
-            text-align: left;
-        }
-
-        header h1 {
-            margin: 0;
-            color: #0077ff;
-            font-size: 26px;
-            text-align: left;
-            padding-left: 20px;
-            font-weight: 800;
-        }
-
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            color: #666666;
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        .market-nav {
-            display: flex !important;
-            flex-direction: row !important;
-            justify-content: flex-start !important;
-            gap: 22px !important;
-            padding: 15px 20px !important;
-            overflow-x: auto !important;
-            white-space: nowrap !important;
-            background-color: #ffffff !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            scrollbar-width: none;
-        }
-
-        .market-nav::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #1f2937;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            min-width: 85px;
-            transition: color 0.2s;
-        }
-
-        .nav-item:hover {
-            color: #000000;
-        }
-
-        .nav-icon {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background-color: #f3f4f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            margin-bottom: 8px;
-            transition: background-color 0.2s, transform 0.1s;
-        }
-
-        .nav-item:hover .nav-icon {
-            background-color: #e5e7eb;
-            transform: scale(1.05);
-        }
-
-        /* КОНТЕЙНЕР ДЛЯ СЛАЙДЕРА */
-        .slider-wrapper {
-            margin: 10px 20px 25px 20px;
-            position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .promo-slider {
-            display: flex;
-            width: 200%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            width: 50%;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 30px;
-            box-sizing: border-box;
-            position: relative;
-            background: #110c24;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
-        }
-
-        /* ФОН 1 БАННЕРА — ЧЕРЕП БРАВЛ СТАРС */
-        .slide-chat::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: url('https://wikimedia.org') center/cover no-repeat;
-            opacity: 0.35;
-            z-index: 1;
-        }
-
-        /* ФОН 2 БАННЕРА — РЕКЛАМНЫЙ СТАТИЧНЫЙ ДИЗАЙН */
-        .slide-ad::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
-            opacity: 0.9;
-            z-index: 1;
-        }
-
-        .promo-content {
-            position: relative;
-            z-index: 2;
-            max-width: 90%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .promo-title {
-            color: #ffffff;
-            font-size: 25px;
-            font-weight: 800;
-            margin: 0 0 10px 0;
-            line-height: 1.3;
-            text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .promo-desc {
-            color: #ffffff;
-            font-size: 16px;
-            margin: 0 0 25px 0;
-            font-weight: 600;
-            line-height: 1.4;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .slide-ad .promo-title {
-            font-size: 26px;
-            margin: 0 0 12px 0;
-        }
+        body { font-family: sans-serif; background-color: #ffffff; color: #000000; margin: 0; padding: 0; text-align: center; scroll-behavior: smooth; }
+        header { background: #ffffff; padding: 20px; text-align: left; }
+        header h1 { margin: 0; color: #0077ff; font-size: 26px; font-weight: 800; }
+        header p { margin: 5px 0 0 0; font-size: 14px; color: #666666; }
+        .market-nav { display: flex !important; flex-direction: row !important; justify-content: flex-start !important; gap: 22px !important; padding: 15px 20px !important; overflow-x: auto !important; white-space: nowrap !important; background-color: #ffffff !important; width: 100% !important; box-sizing: border-box !important; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #1f2937; font-size: 14px; font-weight: 600; cursor: pointer; min-width: 85px; }
+        .nav-icon { width: 58px; height: 58px; border-radius: 50%; background-color: #f3f4f6; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px; }
        
-        .slide-ad .promo-desc {
-            margin: 0;
-            font-size: 17px;
-            color: #e2e8f0;
-        }
-
-        .promo-btn {
-            display: inline-block;
-            background: #ffcc00;
-            color: #000000;
-            padding: 12px 28px;
-            border-radius: 12px;
-            font-weight: 800;
-            font-size: 14px;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.1s;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-        }
-
-        .promo-btn:hover {
-            background: #e6b800;
-            transform: translateY(-1px);
-        }
-
-        /* СТРЕЛКИ ДЛЯ НАВИГАЦИИ ПО БОКАМ */
-        .slider-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            cursor: pointer;
-            z-index: 10;
-            transition: background 0.2s;
-            user-select: none;
-        }
-
-        .slider-arrow:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
+        /* СЛАЙДЕР БАННЕРОВ */
+        .slider-wrapper { margin: 10px 20px 25px 20px; position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); }
+        .promo-slider { display: flex; width: 200%; transition: transform 0.5s ease-in-out; }
+        .slide { width: 50%; min-height: 250px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 30px; box-sizing: border-box; position: relative; background: #110c24; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .slide-chat::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url('https://wikimedia.org') center/cover no-repeat; opacity: 0.35; z-index: 1; }
+        .slide-ad::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%); opacity: 0.9; z-index: 1; }
+        .promo-content { position: relative; z-index: 2; max-width: 90%; display: flex; flex-direction: column; align-items: center; }
+        .promo-title { color: #ffffff; font-size: 25px; font-weight: 800; margin: 0 0 10px 0; text-transform: uppercase; }
+        .promo-desc { color: #ffffff; font-size: 16px; margin: 0 0 25px 0; font-weight: 600; }
+        .promo-btn { display: inline-block; background: #ffcc00; color: #000000; padding: 12px 28px; border-radius: 12px; font-weight: 800; font-size: 14px; text-decoration: none; text-transform: uppercase; }
+        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; z-index: 10; user-select: none; }
         .arrow-left { left: 15px; }
         .arrow-right { right: 15px; }
 
-        @media (max-width: 768px) {
-            .slide {
-                min-height: 220px;
-                padding: 25px 15px;
-            }
-            .promo-title { font-size: 18px; }
-            .promo-desc { font-size: 13px; margin: 0 0 15px 0; }
-           
-            .slide-ad .promo-title { font-size: 19px; margin-bottom: 8px; }
-            .slide-ad .promo-desc { font-size: 14px; margin: 0; }
-           
-            .promo-btn { padding: 10px 20px; font-size: 12px; }
-            .slider-arrow { width: 32px; height: 32px; font-size: 14px; }
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            padding: 20px;
-            gap: 20px;
-        }
+        .container { display: flex; flex-wrap: wrap; justify-content: flex-start; padding: 20px; gap: 20px; }
     </style>
 </head>
 <body>
@@ -260,35 +38,17 @@
     </header>
 
     <nav class="market-nav">
-        <a href="#accounts" class="nav-item">
-            <div class="nav-icon">👤</div>
-            <span>Аккаунты</span>
-        </a>
-        <a href="#push" class="nav-item">
-            <div class="nav-icon">🚀</div>
-            <span>Пуш кубков</span>
-        </a>
-        <a href="#donate" class="nav-item">
-            <div class="nav-icon" style="font-size: 26px;">💰</div>
-            <span>Донат</span>
-        </a>
-        <a href="#design" class="nav-item">
-            <div class="nav-icon">🎨</div>
-            <span>Дизайн</span>
-        </a>
-        <a href="#ads" class="nav-item">
-            <div class="nav-icon">📢</div>
-            <span>Биржа рекламы</span>
-        </a>
+        <a href="#accounts" class="nav-item"><div class="nav-icon">👤</div><span>Аккаунты</span></a>
+        <a href="#push" class="nav-item"><div class="nav-icon">🚀</div><span>Пуш кубков</span></a>
+        <a href="#donate" class="nav-item"><div class="nav-icon" style="font-size: 26px;">💰</div><span>Донат</span></a>
+        <a href="#design" class="nav-item"><div class="nav-icon">🎨</div><span>Дизайн</span></a>
+        <a href="#ads" class="nav-item"><div class="nav-icon">📢</div><span>Биржа рекламы</span></a>
     </nav>
 
-    <!-- СЛАЙДЕР С АВТОПРОКРУТКОЙ И СТРЕЛКАМИ -->
     <div class="slider-wrapper">
         <div class="slider-arrow arrow-left" id="prevBtn">&#10094;</div>
         <div class="slider-arrow arrow-right" id="nextBtn">&#10095;</div>
-       
         <div class="promo-slider" id="slider">
-            <!-- БАННЕР 1: ТВОЙ ТГ ЧАТ -->
             <div class="slide slide-chat">
                 <div class="promo-content">
                     <h2 class="promo-title">Надоело сидеть без денег?</h2>
@@ -296,8 +56,6 @@
                     <a href="https://t.me" class="promo-btn" target="_blank">Начать торговать</a>
                 </div>
             </div>
-           
-            <!-- БАННЕР 2: ЧИСТОЕ МЕСТО ПОД РЕКЛАМУ -->
             <div class="slide slide-ad">
                 <div class="promo-content">
                     <h2 class="promo-title">Здесь могла быть ваша реклама</h2>
@@ -307,7 +65,6 @@
         </div>
     </div>
 
-    <!-- РАЗДЕЛЫ ДЛЯ КАРТОЧЕК -->
     <div class="container" id="accounts"></div>
     <div class="container" id="push"></div>
     <div class="container" id="donate"></div>
@@ -318,13 +75,13 @@
         const slider = document.getElementById('slider');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-       
         let currentSlide = 0;
-        const totalSlides = 2;
-        let autoSlideInterval;
-
-        function updateSlider() {
-            if(slider) slider.style.transform = `translateX(-${currentSlide * 50}%)`;
+        function updateSlider() { if(slider) slider.style.transform = `translateX(-${currentSlide * 50}%)`; }
+        if(nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', () => { currentSlide = (currentSlide + 1) % 2; updateSlider(); });
+            prevBtn.addEventListener('click', () => { currentSlide = (currentSlide - 1 + 2) % 2; updateSlider(); });
         }
-
-        function nextSlide() {
+        setInterval(() => { currentSlide = (currentSlide + 1) % 2; updateSlider(); }, 10000);
+    </script>
+</body>
+</html>
