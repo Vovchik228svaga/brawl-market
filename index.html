@@ -47,6 +47,52 @@
     <div class="container" id="donate"></div>
     <div class="container" id="design"></div>
     <div class="container" id="ads"></div>
+  <!-- ОЖИВЛЯЕМ СЛАЙДЕР: СТРЕЛКИ И АВТОПРОКРУТКА -->
+    <script>
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+       
+        let currentSlide = 0;
+        const totalSlides = 2;
+        let autoSlideInterval;
+
+        function updateSlider() {
+            if (slider) {
+                slider.style.transform = `translateX(-${currentSlide * 50}%)`;
+            }
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function startAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(nextSlide, 10000);
+        }
+
+        if (nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoSlide();
+            });
+        }
+
+        // Старт автоматического мотания при загрузке
+        startAutoSlide();
+    </script>
 
 </body>
 </html>
