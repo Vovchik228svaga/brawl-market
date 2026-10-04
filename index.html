@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brawl Market</title>
-    <!-- Мы вынесли весь сложный дизайн в эту одну безопасную ссылку! -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +21,7 @@
         <a href="#ads" class="nav-item"><div class="nav-icon">📢</div><span>Биржа рекламы</span></a>
     </nav>
 
-    <div class="slider-wrapper">
-        <div class="slider-arrow arrow-left" id="prevBtn">&#10094;</div>
-        <div class="slider-arrow arrow-right" id="nextBtn">&#10095;</div>
-        <div class="promo-slider" id="slider">
-            <div class="slide slide-chat">
-                <div class="promo-content">
-                    <h2 class="promo-title">Надоело сидеть без денег?</h2>
-                    <p class="promo-desc">Начни торговать рекламой уже сегодня! Более 150 админов ждут тебя.</p>
-                    <a href="https://t.me" class="promo-btn" target="_blank">Начать торговать</a>
-                </div>
-            </div>
-            <div class="slide slide-ad">
-                <div class="promo-content">
-                    <h2 class="promo-title">Здесь могла быть ваша реклама</h2>
-                    <p class="promo-desc">Разместите свой баннер на главной странице самого сочного маркета Бравл Старс.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-   <!-- СЛАЙДЕР С АВТОПРОКРУТКОЙ И СТРЕЛКАМИ -->
+    <!-- ОДИН ЕДИНСТВЕННЫЙ ИДЕАЛЬНЫЙ СЛАЙДЕР -->
     <div class="slider-wrapper">
         <div class="slider-arrow arrow-left" id="prevBtn">&#10094;</div>
         <div class="slider-arrow arrow-right" id="nextBtn">&#10095;</div>
@@ -57,7 +36,7 @@
                 </div>
             </div>
            
-            <!-- БАННЕР 2: ЧИСТОЕ МЕСТО ПОД РЕКЛАМУ -->
+            <!-- БАННЕР 2: МЕСТО ПОД РЕКЛАМУ -->
             <div class="slide slide-ad">
                 <div class="promo-content">
                     <h2 class="promo-title">Здесь могла быть ваша реклама</h2>
@@ -65,13 +44,16 @@
                 </div>
             </div>
         </div>
-    </div>  
-  <div class="container" id="accounts"></div>
+    </div>
+
+    <!-- РАЗДЕЛЫ ДЛЯ ТОВАРОВ -->
+    <div class="container" id="accounts"></div>
     <div class="container" id="push"></div>
     <div class="container" id="donate"></div>
     <div class="container" id="design"></div>
     <div class="container" id="ads"></div>
-  <!-- ОЖИВЛЯЕМ СЛАЙДЕР: СТРЕЛКИ И АВТОПРОКРУТКА -->
+
+    <!-- МОЗГИ СЛАЙДЕРА -->
     <script>
         const slider = document.getElementById('slider');
         const prevBtn = document.getElementById('prevBtn');
@@ -114,7 +96,6 @@
             });
         }
 
-        // Старт автоматического мотания при загрузке
         startAutoSlide();
     </script>
 
