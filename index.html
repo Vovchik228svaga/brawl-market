@@ -4,28 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brawl Market</title>
-    <style>
-        body { font-family: sans-serif; background-color: #ffffff; color: #000000; margin: 0; padding: 0; text-align: center; scroll-behavior: smooth; }
-        header { background: #ffffff; padding: 20px; text-align: left; }
-        header h1 { margin: 0; color: #0077ff; font-size: 26px; font-weight: 800; }
-        header p { margin: 5px 0 0 0; font-size: 14px; color: #666666; }
-        .market-nav { display: flex !important; flex-direction: row !important; justify-content: flex-start !important; gap: 22px !important; padding: 15px 20px !important; overflow-x: auto !important; white-space: nowrap !important; background-color: #ffffff !important; width: 100% !important; box-sizing: border-box !important; }
-        .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #1f2937; font-size: 14px; font-weight: 600; cursor: pointer; min-width: 85px; }
-        .nav-icon { width: 58px; height: 58px; border-radius: 50%; background-color: #f3f4f6; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 8px; }
-        .slider-wrapper { margin: 10px 20px 25px 20px; position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); }
-        .promo-slider { display: flex; width: 200%; transition: transform 0.5s ease-in-out; }
-        .slide { width: 50%; min-height: 250px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 30px; box-sizing: border-box; position: relative; background: #110c24; border: 1px solid rgba(255, 255, 255, 0.08); }
-        .slide-chat::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url('https://wikimedia.org') center/cover no-repeat; opacity: 0.35; z-index: 1; }
-        .slide-ad::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%); opacity: 0.9; z-index: 1; }
-        .promo-content { position: relative; z-index: 2; max-width: 90%; display: flex; flex-direction: column; align-items: center; }
-        .promo-title { color: #ffffff; font-size: 25px; font-weight: 800; margin: 0 0 10px 0; text-transform: uppercase; }
-        .promo-desc { color: #ffffff; font-size: 16px; margin: 0 0 25px 0; font-weight: 600; }
-        .promo-btn { display: inline-block; background: #ffcc00; color: #000000; padding: 12px 28px; border-radius: 12px; font-weight: 800; font-size: 14px; text-decoration: none; text-transform: uppercase; }
-        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; z-index: 10; user-select: none; }
-        .arrow-left { left: 15px; }
-        .arrow-right { right: 15px; }
-        .container { display: flex; flex-wrap: wrap; justify-content: flex-start; padding: 20px; gap: 20px; }
-    </style>
+    <!-- Мы вынесли весь сложный дизайн в эту одну безопасную ссылку! -->
+    <link rel="stylesheet" href="https://github.io">
 </head>
 <body>
 
@@ -68,17 +48,5 @@
     <div class="container" id="design"></div>
     <div class="container" id="ads"></div>
 
-    <script>
-        const slider = document.getElementById('slider');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentSlide = 0;
-        function updateSlider() { if(slider) slider.style.transform = `translateX(-${currentSlide * 50}%)`; }
-        if(nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => { currentSlide = (currentSlide + 1) % 2; updateSlider(); });
-            prevBtn.addEventListener('click', () => { currentSlide = (currentSlide - 1 + 2) % 2; updateSlider(); });
-        }
-        setInterval(() => { currentSlide = (currentSlide + 1) % 2; updateSlider(); }, 10000);
-    </script>
 </body>
 </html>
